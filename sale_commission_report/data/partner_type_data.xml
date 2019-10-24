@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+        <record id="PT-COMM01" model="res.partner.type">
+              <field name="name">Usuario final</field>
+              <field name="commission">0.6</field>
+        </record>
+        <record id="PT-COMM02" model="res.partner.type">
+              <field name="name">Revendedor</field>
+              <field name="commission">0.3</field>
+        </record>
+  </data>
+</odoo>

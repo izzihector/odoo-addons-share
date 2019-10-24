@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <odoo>
+    <data>
+    <record id="view_form_documentary_process" model="ir.ui.view">
+         <field name="name">view.form.documentary.process</field>
+         <field name="model">documentary.process</field>
+         <field name="arch" type="xml">
+            <form string="Process list">
+               <sheet>
+
+                  <field name="image_medium" widget="image" class="oe_avatar"/>
+
+                  <div class="oe_title">
+                           <h1>
+                               <field name="name" readonly="1"/>
+                           </h1>
+                        </div>
+
+                  <group>
+                      <group>
+                          <field name="desc" required="1"/>
+                          <field name="tag_ids" placeholder="Tags" widget="many2many_tags"  options="{'no_create_edit': True}"/>
+                       </group>
+                      <group>
+                         <field name="area_id" options='{"no_create": 1, "no_open": 1}' required="1"/>
+                      </group>
+                  </group>
+                  <field name="obs" widget="html"/>
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+     <record id="view_kanban_documentary_process" model="ir.ui.view">
+            <field name="name">Process Kanban</field>
+            <field name="model">documentary.process</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="image_medium"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('product.product', 'image_medium', record.id.value)" alt=""/>
+                                </div>
+                                 <div class="o_kanban_tags_section">
+                                    <span class="oe_kanban_list_many2many">
+                                        <field name="tag_ids"/>
+                                    </span>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <strong><field name="name"/></strong>
+                                    <ul>
+                                        <li><strong>Name:</strong> <field name="desc"></field></li>
+                                        <li><strong>Area:</strong> <field name="area_id"></field></li>
+                                    </ul>
+                                    <div name="tags"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+    <record id="view_tree_documentary_process" model="ir.ui.view">
+         <field name="name">view.tree.documentary.process</field>
+         <field name="model">documentary.process</field>
+         <field name="arch" type="xml">
+             <tree>
+                 <field name="name"/>
+                 <field name="desc"/>
+                 <field name="area_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_documentary_process" model="ir.actions.act_window">
+        <field name="name">Process</field>
+        <field name="res_model">documentary.process</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Press to create a New</p>
+       </field>
+    </record>
+
+   
+
+
+    <menuitem id="menu_pdm_process"
+        name="Process"
+        parent="dm_menu_2"
+        sequence="20"
+        action="action_documentary_process" />
+     </data>
+</odoo>

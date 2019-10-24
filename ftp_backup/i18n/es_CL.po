@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* ftp_backup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-17 01:10+0000\n"
+"PO-Revision-Date: 2018-07-17 01:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ftp_backup
+#: model:ir.ui.view,arch_db:ftp_backup.ftp_view_backup_conf_form
+msgid "FTP"
+msgstr "FTP"
+
+#. module: ftp_backup
+#: model:ir.model.fields,field_description:ftp_backup.field_db_backup_send_ftp
+msgid "FTP Backup"
+msgstr "Respaldo en FTP"
+
+#. module: ftp_backup
+#: model:ir.model.fields,field_description:ftp_backup.field_db_backup_ftp_dest
+msgid "FTP Dest."
+msgstr "FTP Dest."
+
+#. module: ftp_backup
+#: model:ir.model.fields,field_description:ftp_backup.field_db_backup_ftp_pwd
+msgid "FTP Password"
+msgstr "FTP Contraseña"
+
+#. module: ftp_backup
+#: model:ir.model.fields,field_description:ftp_backup.field_db_backup_ftp_user
+msgid "FTP User"
+msgstr "FTP Usuario"
+
+#. module: ftp_backup
+#: model:ir.model.fields,help:ftp_backup.field_db_backup_send_ftp
+msgid "If you check this option you can choose to automatically transfer the backup to a ftp server."
+msgstr "Si selecciona esta opción, usted puede seleccionar automaticamente transferir el respaldo a un servidor ftp."
+
+#. module: ftp_backup
+#: code:addons/ftp_backup/models/db_backup.py:191
+#, python-format
+msgid "Something went wrong!... Couldn't transfer db backup to ftp server"
+msgstr "Algo falló!... No se pudo transferir el respaldo al servidor ftp"
+
+#. module: ftp_backup
+#: code:addons/ftp_backup/models/db_backup.py:189
+#, python-format
+msgid "Succesfully transfered backup to ftp server %s"
+msgstr "Respaldo enviado a servidor ftp exitosamente %s"
+
+#. module: ftp_backup
+#: model:ir.model.fields,help:ftp_backup.field_db_backup_ftp_user
+msgid "The ftp owner user"
+msgstr "Usuario del servidor ftp"
+
+#. module: ftp_backup
+#: model:ir.model.fields,help:ftp_backup.field_db_backup_ftp_pwd
+msgid "The ftp owner user password"
+msgstr "Contraseña del usuario del servidor ftp"
+
+#. module: ftp_backup
+#: model:ir.model.fields,help:ftp_backup.field_db_backup_ftp_dest
+msgid "The ftp server route for file transfer"
+msgstr "La ruta del servidor ftp"
+
+#. module: ftp_backup
+#: model:ir.model,name:ftp_backup.model_db_backup
+msgid "db.backup"
+msgstr "db.backup"
+
+#. module: ftp_backup
+#: model:ir.ui.view,arch_db:ftp_backup.ftp_view_backup_conf_form
+msgid "urlexample.com/backup_folder/"
+msgstr "ejemplourl.com/directorio_respaldo/"
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="button_cancel_view_picking_form" model="ir.ui.view">
+        <field name="name">button.cancel.view.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <button name="action_cancel" position="attributes">
+                <attribute name="confirm">Está seguro de que desea cancelar este documento?</attribute>
+                <attribute name="groups">button_cancel_confirmation.group_cancel_picking</attribute>
+            </button>
+        </field>
+    </record>
+</odoo>

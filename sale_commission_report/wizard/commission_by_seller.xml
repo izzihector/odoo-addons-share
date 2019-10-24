@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wizard_commission_by_seller_report_view" model="ir.ui.view">
+            <field name="name">wizard.commission.by.seller.report.view</field>
+            <field name="model">wizard.commission.by.seller.report</field>
+            <field name="arch" type="xml">
+            <form string="Sales report">
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="type_report" widget="radio" string='Tipo de reporte' invisible="1"/>
+                        <field name="all_sellers" string="Todos los vendedores"/>
+                    </group>
+                    <group>
+                        <field name="state" widget="radio" invisible="1"/>
+                    </group>
+                    <separator string="Vendedores" attrs="{'invisible': [('all_sellers', '=', True)], 'required': [('all_sellers', '=', False)]}"/>
+                    <field name="user_ids" nolabel="1" attrs="{'invisible': [('all_sellers', '=', True)], 'required': [('all_sellers', '=', False)]}" options="{'no_create': True}">
+                        <tree>
+                            <field name="name" />
+                            <field name="login"/>
+                        </tree>
+                    </field>
+                </group>
+                <footer>
+                    <button name="print_pdf" string="Imprimir PDF" type="object" class="btn-primary"/>
+                    <button name="print_xlsx" string="Imprimir XLSX" type="object" class="btn-primary"/>
+                    <button special="cancel" string="Cerrar" class="btn-default"/>
+                </footer>
+            </form>
+            </field>
+        </record>
+
+        <record id="action_wizard_commission_seller" model="ir.actions.act_window">
+            <field name="name">Comisión por vendedores</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">wizard.commission.by.seller.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_wizard_commission_by_seller" action="action_wizard_commission_seller" parent="sale.menu_sale_report" sequence="3"/>
+
+    </data>
+</odoo>

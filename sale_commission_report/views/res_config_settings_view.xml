@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.commision</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="l10n_cl_einvoicing.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <div name="sii_cf_setting" position="after">
+                <h2>Comisiones</h2>
+                <div class="row mt16 o_settings_container" name="commission_setting_container">
+                    <div class="col-12 col-lg-6 o_setting_box" title="">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="commission_type"/>
+                            <div class="text-muted">
+                                La prioridad en el cálculo de comisión se establece respectivamente de acuerdo a como se define cada grupo de variables.
+                            </div>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="commission_type" class="o_light_label" widget="radio"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+
+</odoo>

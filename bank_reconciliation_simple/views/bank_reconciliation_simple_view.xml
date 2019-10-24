@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <data>
+    <record id="view_form_bank_reconciliation_simple" model="ir.ui.view">
+         <field name="name">view.form.bank.reconciliation.simple</field>
+         <field name="model">bank.reconciliation.simple</field>
+         <field name="arch" type="xml">
+            <form string="Líneas de Conciliación Bancaria">
+              <header>
+
+                  <button name="exe_conciliar" string="Conciliar" class="oe_highlight" type="object"
+                        attrs="{'invisible': [('state','!=','draft')]}" />
+
+                  <button name="exe_romper_conciliacion" string="Romper Conciliación" class="oe_highlight" type="object"
+                        attrs="{'invisible': [('state','!=','conciliado')]}" />
+
+                  <button name="exe_cancel" string="Cancelar"  type="object" attrs="{'invisible': [('state','=','cancel')]}" />
+
+                  <button name="exe_draft" string="Borrador" class="oe_highlight" type="object"
+                        attrs="{'invisible': [('state','!=','cancel')]}" />
+
+                  <button name="exe_account_move_lines" string="Buscar Apuntes" class="btn btn-primary" type="object" states="draft"/>
+
+                  <button name="exe_delete_line" string="Borrar Apuntes" class="btn btn-primary" type="object" states="draft"/>
+
+                  <field name="state" widget="statusbar"/>
+              </header>
+              <sheet>
+                  <div class="oe_title">
+                           <h1>
+                               <field name="name" readonly="1"/>
+                           </h1>
+                        </div>
+                  <group>
+                      <group>
+                          <field name="description" required="1"/>
+                          <field name="entry_date"/>
+                          <field name="user_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                          <field name="partner_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                          <field name="voucher" widget="integer"/>
+                          <field name="bank_id" required="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                       </group>
+                      <group>
+                          <field name="reconciliation_id"/>
+                          <field name="date" required="1"/>
+                          <field name="no_doc"/>
+                          <field name="type" required="1"/>
+                          <field name="abono" required="1"/>
+                          <field name="cargo" required="1"/>
+                          <field name="invoice_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                          <field name="account_move_line_id"
+                                 domain="[('can_be_reconciled', '=', 'True'),('reconciled', '=', 'False')]"
+                                 options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                       </group>
+                  </group>
+                  
+
+                  <notebook colspan="4">
+                    <page string="Posibles Apuntes" name="posible_apunte">
+                        <group>
+                            <field name="lines_ids" nolabel="1" widget="one2many_list">
+                                <tree editable="bottom" create="0" colors="red:reconciled=='False'">
+                                    <field name="check"/>
+                                    <field name="account_move_line_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}" readonly="1"/>
+                                    <field name="date" readonly="1"/>
+                                    <field name="move_id" readonly="1"/>
+                                    <field name="journal_id" readonly="1"/>
+                                    <field name="label" readonly="1"/>
+                                    <field name="debit" readonly="1"/>
+                                    <field name="credit" readonly="1"/>
+                                    <field name="reconciled" readonly="1"/>
+                                    <!--<field name="ref"/>
+                                    <field name="partner_id"/>
+                                    <field name="account_id"/>
+                                    -->
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+
+                    <page string="Observación">
+                        <field name="obs"/>
+                    </page>
+                  </notebook>
+
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_bank_reconciliation_simple" model="ir.ui.view">
+         <field name="name">view.bank.reconciliation.simple</field>
+         <field name="model">bank.reconciliation.simple</field>
+         <field name="arch" type="xml">
+            <tree decoration-muted="state == 'cancel'" colors="red:state=='draft'; blue:state=='load';">
+                <field name="name"/>
+                <field name="user_id" />
+
+                <field name="bank_id"/>
+                <field name="voucher" widget="integer"/>
+                <field name="date"/>
+                <field name="type"/>
+                <field name="description"/>
+                <field name="partner_id"/>
+                <field name="no_doc"/>
+                <field name="abono"/>
+                <field name="cargo"/>
+                <field name="reconciliation_id"/>
+
+                <field name="account_move_line_id"/>
+
+                <field name="entry_date"/>
+                <field name="user_id"/>
+
+                <field name="invoice_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_bank_reconciliation_simple" model="ir.actions.act_window">
+        <field name="name">Líneas de Conciliación Bancaria</field>
+        <field name="res_model">bank.reconciliation.simple</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Presione para crear nuevo Registro</p>
+       </field>
+    </record>
+
+    <!-- groups="sii_xml_direct.xml_direct_user_group" -->
+    <!-- MenÃº superior o principal: no hereda de otro menÃº -->
+    <menuitem id="bank_menu_main"
+              name="Banco"
+              sequence="100"
+              groups="bank_reconciliation_simple.bank_reconciliation_user_group"
+              web_icon="bank_reconciliation_simple,static/description/icon.png"/>
+
+    <!-- MenÃº Secundario: Hereda del menÃº principal -->
+    <menuitem id="menu_bank_2" name="Conciliación Bancaria" parent="bank_menu_main" sequence="10"/>
+
+
+    <menuitem id="menu_bank_3"
+        name="Lineas de Conciliación Bancaria"
+        parent="menu_bank_2"
+        sequence="30"
+        action="action_bank_reconciliation_simple" />
+     </data>
+
+</odoo>

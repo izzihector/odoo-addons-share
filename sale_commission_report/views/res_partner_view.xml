@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+
+    <record id="view_partner_form_extended_commission" model="ir.ui.view">
+        <field name="name">view.partner.extended.commission</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_cl_base.base_view_partner_form"/>
+        <field name="arch" type="xml">
+           <field name="activities_ids" position="after">
+                <field name="partner_type_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo> 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="button_cancel_invoice_form" model="ir.ui.view">
+        <field name="name">button.cancel.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="l10n_cl_base.account_base_invoice_form"/>
+        <field name="arch" type="xml">
+            <button name="action_invoice_cancel" position="attributes">
+                <attribute name="confirm">Está seguro de que desea cancelar este documento?</attribute>
+                <attribute name="groups">button_cancel_confirmation.group_cancel_invoice</attribute>
+            </button>
+        </field>
+    </record>
+    
+    <record id="button_cancel_invoice_supplier_form" model="ir.ui.view">
+        <field name="name">button.cancel.invoice.supplier.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="l10n_cl_base.account_base_invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <button name="action_invoice_cancel" position="attributes">
+                <attribute name="confirm">Está seguro de que desea cancelar este documento?</attribute>
+                <attribute name="groups">button_cancel_confirmation.group_cancel_invoice</attribute>
+            </button>
+        </field>
+    </record>
+</odoo>

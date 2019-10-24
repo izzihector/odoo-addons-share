@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- clientes -->
+        <record id="res_partner_view_form2_inh" model="ir.ui.view">
+            <field name="name">res.partner.inherit.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//field[@name='type']" position="before">
+      	       			<field name="account_filter" widget="radio" options="{'horizontal': true}" groups="partner_customer_locked.group_customer_locked"/>
+      	        		<field name="motive_locked" attrs="{'required': [('account_filter', '=', 'bloqueado')], 'invisible': [('account_filter', '!=', 'bloqueado')]}" groups="partner_customer_locked.group_customer_locked"/>
+ 					</xpath>		
+            </field>
+		</record>
+    </data>
+</odoo>

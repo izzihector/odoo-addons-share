@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_pricelist_item_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.pricelist.item.form.view.inherit</field>
+        <field name="model">product.pricelist.item</field>
+        <field name="inherit_id" ref="product.product_pricelist_item_form_view"/>
+        <field name="arch" type="xml">
+            <field name="base" position="after">
+                <field name="field_id" colspan="6" options="{'no_create': 1, 'no_open': 1}"
+                    attrs="{'invisible': [('base', '!=', 'field')], 'required': [('base', '=', 'field')]}"
+                    domain="[('model', '=', 'product.product'), ('ttype', 'in', ['integer', 'float', 'monetary']), ('name', 'not in', ['id', 'color', 'message_needaction_counter', 'message_unread_counter', 'rating_count', 'rating_last_value', 'delivery_count', 'product_variant_count', 'sales_count', 'purchase_count'])]"/>
+            </field>
+            <xpath expr="/form/group[3]/div[1]" position="inside">
+                <field name="field_name" nolabel="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

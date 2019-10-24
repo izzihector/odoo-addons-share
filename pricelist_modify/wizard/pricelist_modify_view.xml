@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="pricelist_modify_wizard_view" model="ir.ui.view">
+            <field name="name">pricelist.modify.view</field>
+            <field name="model">pricelist.modify</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                		<field widget="binary" height="64" name="file" filename="file_name" required="1"/>
+						<field name="file_name" invisible="1" />
+                	</group>
+                    <footer>
+                        <button name="import_csv" string="Importar CSV" type="object" class="btn btn-primary"/>
+                        <button string="Cerrar" class="btn btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_wizard_pricelist_modify" model="ir.actions.act_window">
+          <field name="name">Importar .csv</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">pricelist.modify</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+        </record>
+
+        <!--<menuitem action="action_export_inventory"
+          id="export_export_inventory"
+          parent="stock.menu_stock_inventory_control"
+          sequence="30"/>-->
+
+    </data>
+</odoo>
+
+
+

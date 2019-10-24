@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="commission_invoice_form" model="ir.ui.view">
+        <field name="name">commission.account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="inside">
+<!--            <field name="commission_amount" invisible="not context.get('commissioned_partner_id', False)" sum="Total"/>-->
+                <field name="commission_amount" string="Comisión"/>
+            </xpath>
+            <field name="reference" position="after">
+                <field name="commission_net"/>
+                <field name="commission_total"/>
+            </field>
+        </field>
+    </record>
+
+
+
+<!--
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">account.invoice.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="mode">primary</field>
+        <field name="priority">90</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="residual_signed" position="after">
+                <field name="commission_amount" sum="Total"/>
+            </field>
+        </field>
+    </record>
+-->
+
+
+
+</odoo>

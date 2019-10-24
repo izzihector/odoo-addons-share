@@ -1,0 +1,341 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* documentary_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-19 18:28+0000\n"
+"PO-Revision-Date: 2018-08-19 15:31-0300\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_CL\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: documentary_management
+#: model:documentary.area,obs:documentary_management.DM04
+#: model:documentary.process,obs:documentary_management.PR02
+#: model:documentary.process,obs:documentary_management.PR04
+msgid "<p><br></p>"
+msgstr "<p><br></p>"
+
+#. module: documentary_management
+#: model:ir.ui.view,arch_db:documentary_management.view_kanban_documentary_process
+msgid "<strong>Area:</strong>"
+msgstr "<strong>Área:</strong>"
+
+#. module: documentary_management
+#: model:ir.ui.view,arch_db:documentary_management.view_kanban_documentary_area
+#: model:ir.ui.view,arch_db:documentary_management.view_kanban_documentary_file
+#: model:ir.ui.view,arch_db:documentary_management.view_kanban_documentary_process
+msgid "<strong>Name:</strong>"
+msgstr "<strong>Nombre:</strong>"
+
+#. module: documentary_management
+#: model:ir.ui.view,arch_db:documentary_management.view_kanban_documentary_file
+msgid "<strong>Partner:</strong>"
+msgstr "<strong>Partner:</strong>"
+
+#. module: documentary_management
+#: model:ir.ui.view,arch_db:documentary_management.view_kanban_documentary_file
+msgid "<strong>Process:</strong>"
+msgstr "<strong>Proceso:</strong>"
+
+#. module: documentary_management
+#: model:documentary.area,name:documentary_management.DM01
+msgid "A/01"
+msgstr "A/01"
+
+#. module: documentary_management
+#: model:documentary.area,name:documentary_management.DM02
+msgid "A/02"
+msgstr "A/02"
+
+#. module: documentary_management
+#: model:documentary.area,name:documentary_management.DM03
+msgid "A/03"
+msgstr "A/03"
+
+#. module: documentary_management
+#: model:documentary.area,name:documentary_management.DM04
+msgid "A/04"
+msgstr "A/04"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_active
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_active
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: documentary_management
+#: model:ir.actions.act_window,name:documentary_management.action_documentary_area
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_area_id
+#: model:ir.ui.menu,name:documentary_management.menu_dm_area
+msgid "Area"
+msgstr "Área"
+
+#. module: documentary_management
+#: model:ir.ui.view,arch_db:documentary_management.view_form_documentary_area
+msgid "Area list"
+msgstr "Lista de Área"
+
+#. module: documentary_management
+#: model:documentary.area,desc:documentary_management.DM01
+msgid "Calidad"
+msgstr "Calidad"
+
+#. module: documentary_management
+#: model:documentary.area,desc:documentary_management.DM03
+msgid "Clientes"
+msgstr "Clientes"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_name
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_name
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_name
+msgid "Code"
+msgstr "Código"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_color
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_color
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_color
+msgid "Color"
+msgstr "Color"
+
+#. module: documentary_management
+#: model:documentary.process,desc:documentary_management.PR04
+msgid "Contrato"
+msgstr "Contrato"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_create_uid
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_create_uid
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_create_uid
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_create_uid
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_create_uid
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_create_date
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_create_date
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_create_date
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_create_date
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_create_date
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: documentary_management
+#: model:ir.model,name:documentary_management.model_darea_tag
+#: model:ir.model,name:documentary_management.model_dfile_tag
+#: model:ir.model,name:documentary_management.model_dprocess_tag
+msgid "DArea Tags"
+msgstr "Etiquetas"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_display_name
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_display_name
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_display_name
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_display_name
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_display_name
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: documentary_management
+#: model:documentary.process,desc:documentary_management.PR01
+msgid "Documentación"
+msgstr "Documentación"
+
+#. module: documentary_management
+#: model:ir.ui.menu,name:documentary_management.dm_menu_main
+msgid "Documentary"
+msgstr "Documentación"
+
+#. module: documentary_management
+#: model:ir.model,name:documentary_management.model_documentary_area
+msgid "Documentary Area"
+msgstr "Área"
+
+#. module: documentary_management
+#: model:ir.model,name:documentary_management.model_documentary_file
+msgid "Documentary File"
+msgstr "Fichero"
+
+#. module: documentary_management
+#: model:ir.model,name:documentary_management.model_documentary_process
+msgid "Documentary Process"
+msgstr "Procesos"
+
+#. module: documentary_management
+#: model:ir.actions.act_window,name:documentary_management.action_documentary_file
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_file_01
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_file_name
+#: model:ir.model.fields,help:documentary_management.field_documentary_file_file_01
+#: model:ir.ui.menu,name:documentary_management.menu_pdm_file
+msgid "File"
+msgstr "Ficheros"
+
+#. module: documentary_management
+#: model:ir.ui.view,arch_db:documentary_management.view_form_documentary_file
+msgid "File list"
+msgstr "Lista de Ficheros"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_id
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_id
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_id
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_id
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_id
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_id
+msgid "ID"
+msgstr "ID (identificación)"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag___last_update
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag___last_update
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area___last_update
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file___last_update
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process___last_update
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_write_uid
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_write_uid
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_write_uid
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_write_uid
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_write_uid
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_write_date
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_write_date
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_write_date
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_write_date
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_write_date
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: documentary_management
+#: model:documentary.area,desc:documentary_management.DM04
+msgid "Legal"
+msgstr "Legal"
+
+#. module: documentary_management
+#: model:ir.ui.menu,name:documentary_management.dm_menu_2
+msgid "Main"
+msgstr "Principal"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_image_medium
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_image_medium
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_image_medium
+msgid "Medium-sized image"
+msgstr "Imagen de tamaño mediano"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_darea_tag_name
+#: model:ir.model.fields,field_description:documentary_management.field_dfile_tag_name
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_desc
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_desc
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_desc
+#: model:ir.model.fields,field_description:documentary_management.field_dprocess_tag_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_obs
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_obs
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_obs
+msgid "Notes"
+msgstr "Notas"
+
+#. module: documentary_management
+#: model:documentary.process,name:documentary_management.PR01
+msgid "P/01"
+msgstr "P/01"
+
+#. module: documentary_management
+#: model:documentary.process,name:documentary_management.PR02
+msgid "P/02"
+msgstr "P/02"
+
+#. module: documentary_management
+#: model:documentary.process,name:documentary_management.PR03
+msgid "P/03"
+msgstr "P/03"
+
+#. module: documentary_management
+#: model:documentary.process,name:documentary_management.PR04
+msgid "P/04"
+msgstr "P/04"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: documentary_management
+#: model:ir.actions.act_window,help:documentary_management.action_documentary_area
+#: model:ir.actions.act_window,help:documentary_management.action_documentary_file
+#: model:ir.actions.act_window,help:documentary_management.action_documentary_process
+msgid "Press to create a New"
+msgstr "Press to create a New"
+
+#. module: documentary_management
+#: model:ir.actions.act_window,name:documentary_management.action_documentary_process
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_process_id
+#: model:ir.ui.menu,name:documentary_management.menu_pdm_process
+msgid "Process"
+msgstr "Procesos"
+
+#. module: documentary_management
+#: model:ir.ui.view,arch_db:documentary_management.view_form_documentary_process
+msgid "Process list"
+msgstr "Lista de Procesos"
+
+#. module: documentary_management
+#: model:ir.model.fields,help:documentary_management.field_documentary_area_image_medium
+#: model:ir.model.fields,help:documentary_management.field_documentary_file_image_medium
+#: model:ir.model.fields,help:documentary_management.field_documentary_process_image_medium
+msgid "Product image"
+msgstr "Product image"
+
+#. module: documentary_management
+#: model:documentary.process,desc:documentary_management.PR02
+msgid "Producto"
+msgstr "Producto"
+
+#. module: documentary_management
+#: model:documentary.area,desc:documentary_management.DM02
+msgid "Recursos Humanos"
+msgstr "Recursos Humanos"
+
+#. module: documentary_management
+#: model:documentary.process,desc:documentary_management.PR03
+msgid "Servidor"
+msgstr "Servidor"
+
+#. module: documentary_management
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_area_tag_ids
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_file_tag_ids
+#: model:ir.model.fields,field_description:documentary_management.field_documentary_process_tag_ids
+#: model:ir.ui.view,arch_db:documentary_management.view_form_documentary_area
+#: model:ir.ui.view,arch_db:documentary_management.view_form_documentary_file
+#: model:ir.ui.view,arch_db:documentary_management.view_form_documentary_process
+msgid "Tags"
+msgstr "Etiquetas"

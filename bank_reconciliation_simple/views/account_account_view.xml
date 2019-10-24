@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_account_rec_form" model="ir.ui.view">
+        <field name="name">account.account.rec.form</field>
+        <field name="model">account.account</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.view_account_form"/>
+        <field name="arch" type="xml">
+            <field name="deprecated" position="after">
+                <field name="simple_reconcilliation"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_account_account_rec_tree" model="ir.ui.view">
+        <field name="name">account.account.rec.tree</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_list"/>
+        <field name="arch" type="xml">
+            <field name="user_type_id" position="before" >
+                <field name="simple_reconcilliation"/>
+            </field>
+        </field>
+    </record>
+</odoo>

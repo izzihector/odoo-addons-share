@@ -1,0 +1,30 @@
+
+.border {
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #000000;
+}
+
+.spacing {
+    padding: 6px;
+}
+
+.spacing-right {
+	padding-right: 6px;
+}
+
+.spacing-left {
+	padding-left: 6px;
+}
+
+.total {
+	border-top-style: solid;
+	border-top-width: 1; 
+	border-top-color: #000000;
+}
+
+.border-customer {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+}

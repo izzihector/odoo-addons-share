@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<odoo>
+        
+    <record id="wizard_massive_locked_form" model="ir.ui.view">
+        <field name="name">wizard.massive.locked.form</field>
+        <field name="model">wizard.massive.locked</field>
+        <field name="arch" type="xml">
+            <form string="Bloqueo masivo">
+                <group>
+                    <field name="motive_locked" placeholder="Ingrese el motivo..."/>
+                </group>
+                <footer>
+                    <button name="massives_locked" type="object" string="Bloquear" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_account_paysheet_payment_act" model="ir.actions.act_window">
+        <field name="name">Bloqueo masivo</field>
+        <field name="res_model">wizard.massive.locked</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_massive_locked_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <act_window
+        id="action_massive_locked_acc"
+        name="Bloqueo de Clientes/Proveedores"
+        multi="True"
+        key2="client_action_multi"
+        res_model="wizard.massive.locked"
+        src_model="account.invoice"
+        view_mode="form"
+        target="new"
+        view_type="form"
+        groups="partner_customer_locked.group_customer_locked"/>
+</odoo>

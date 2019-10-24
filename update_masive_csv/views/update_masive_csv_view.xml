@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo>
+
+     <record id="view_update_masive_csv_form" model="ir.ui.view"> 
+        <field name="name">update.masive.csv.form</field> 
+        <field name="model">update.masive.csv</field> 
+        <field name="arch" type="xml"> 
+            <form>
+                <header>
+                    <button name="action_update" type="object" string="Update" class="btn btn-primary" attrs="{'invisible':[('state', '==', 'applied')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" options="{'no_create': True, 'no_open': True}" attrs="{'readonly':[('state', '==', 'applied')]}"/>
+                        </h1>
+                    </div>
+                    <field name="model_name" string=" "/>
+                    <group>
+                        <group> 
+                            <field name="field_from" options="{'no_create': True, 'no_open': True}" domain="[('model_id', '=', name)]" attrs="{'readonly':[('state', '==', 'applied')]}"/>
+                            <field name="field_from_name" string=" "/>
+                            <field name="file_name" invisible="1"/>
+                            <field name="csv" filename="file_name" widget='binary' attrs="{'readonly':[('state', '=', 'applied')]}"/>
+                        </group>
+                        <group> 
+                            <field name="field_to" options="{'no_create': True, 'no_open': True}" domain="[('model_id', '=', name)]" attrs="{'readonly':[('state', '==', 'applied')]}"/>
+                            <field name="field_to_name" string=" "/>
+                        </group>
+                    </group> 
+                </sheet> 
+            </form> 
+        </field> 
+    </record> 
+
+     <record id="view_update_masive_csv_tree" model="ir.ui.view"> 
+        <field name="name">update.masive.csv.tree</field> 
+        <field name="model">update.masive.csv</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                <field name="name"/>
+                <field name="field_from"/> 
+                <field name="field_to"/> 
+                <field name="state"/> 
+           </tree> 
+        </field> 
+    </record> 
+
+    <record model="ir.actions.act_window" id="action_update_masive_csv"> 
+        <field name="name">Update Masive CSV</field> 
+        <field name="type">ir.actions.act_window</field> 
+        <field name="res_model">update.masive.csv</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+    </record> 
+
+    <menuitem id="update_masive_csv_menu" name="Update masive csv"
+        parent="base.menu_administration" sequence="11"/>
+
+    <menuitem id="submenu_update_masive_csv_action" action="action_update_masive_csv"
+        parent="update_masive_csv_menu"/>
+
+</odoo> 

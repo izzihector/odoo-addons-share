@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+        <record id="DM01" model="documentary.area">
+              <field name="desc">Calidad</field>
+        </record>
+        <record id="DM02" model="documentary.area">
+              <field name="desc">Recursos Humanos</field>
+        </record>
+        <record id="DM03" model="documentary.area">
+              <field name="desc">Clientes</field>
+        </record>
+        <record id="DM04" model="documentary.area">
+              <field name="desc">Legal</field>
+        </record>
+  </data>
+</odoo>

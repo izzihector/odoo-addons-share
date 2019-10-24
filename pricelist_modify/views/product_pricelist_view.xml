@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="import_product_pricelist_form_inherited">
+            <field name="name">import.product.pricelist.form.inherited</field>
+            <field name="model">product.pricelist</field>
+            <field name="inherit_id" ref="product.product_pricelist_view"/>
+               <field name="arch" type="xml">
+                   <xpath expr="/form/*" position="before">
+                        <header>
+                            <button name="%(action_wizard_pricelist_modify)d"  icon='fa-gears' type="action" class="btn btn-primary" string=" Modificar Tarifas"/>
+                         </header>
+                   </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

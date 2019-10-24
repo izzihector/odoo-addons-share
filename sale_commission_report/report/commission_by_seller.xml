@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <template id="document_commision_by_seller">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="row text-center">
+                    <h4><strong><span t-esc="title"/></strong></h4>
+                    <span t-esc="subtitle"/>
+                </div>
+                <div class="row">
+
+                    <t t-if="docs.type_report == 'total'">
+                        <table width="100%" class="table table-condensed">
+                            <thead class="border-customer">
+                                <tr>
+                                    <th class="text-left spacing"><span>Vendedor</span></th>
+<!--                                <th class="text-right spacing"><span>Porcentaje</span></th>-->
+                                    <th class="text-right spacing"><span>Monto neto</span></th>
+                                    <th class="text-right spacing"><span>Comisión neta</span></th>
+                                    <th class="text-right spacing"><span>IVA</span></th>
+                                    <th class="text-right spacing"><span>Monto total</span></th>
+                                    <th class="text-right spacing"><span>Comisión total</span></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="list_data" t-as="d">
+                                    <tr class="tbody-spacing">
+                                        <td class="text-left">
+                                            <span class="spacing-left" t-esc="d[0]"/>
+                                        </td>
+<!--                                    <td class="text-right">
+                                            <span class="spacing-left" t-esc="d[-2]"/>
+                                        </td>-->
+                                        <td class="text-right">
+                                            <span class="spacing-right spacing-top-spam" t-esc="d[1]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span class="spacing-right spacing-top-spam" t-esc="d[-1]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span class="spacing-right spacing-top-spam" t-esc="d[2]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span class="spacing-right spacing-top-spam" t-esc="d[3]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span class="spacing-right spacing-top-spam" t-esc="d[4]" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr class="total">
+                                    <td class="text-left"></td>
+                                    <!-- <td class="text-right"></td>-->
+                                    <td class="text-right">
+                                        <strong>
+                                            <span class="spacing-right spacing-top-spam" t-esc="amount_untax" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <strong>
+                                            <span class="spacing-right spacing-top-spam" t-esc="amount_comission_neta" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <strong>
+                                            <span class="spacing-right spacing-top-spam" t-esc="amount_tax" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <strong>
+                                            <span class="spacing-right spacing-top-spam" t-esc="amount_total" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <strong>
+                                            <span class="spacing-right spacing-top-spam" t-esc="amount_comission" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                                        </strong>
+                                    </td>
+                                </tr> 
+                             </tbody>
+                        </table>
+                    </t>
+                </div>
+            </div>
+       </t>
+    </template>
+
+    <template id="commission_by_seller_pdf">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="sale_commission_report.document_commision_by_seller"/>
+            </t>
+        </t>
+    </template>
+
+    <report 
+        id="sale_report_commission_seller"
+        string="Comisiones por vendedor"
+        model="wizard.sales.by.categories.report" 
+        report_type="qweb-pdf"
+        file="sale_commission_report.commission_by_seller_pdf"
+        name="sale_commission_report.commission_by_seller_pdf"
+        attachment_use="False"
+        menu="False"
+        />
+
+</odoo>

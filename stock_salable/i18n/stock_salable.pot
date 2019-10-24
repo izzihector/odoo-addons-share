@@ -1,0 +1,60 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* stock_salable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-30 16:27+0000\n"
+"PO-Revision-Date: 2018-05-30 16:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_salable
+#: model:ir.model.fields,help:stock_salable.field_product_product_qty_salable
+#: model:ir.model.fields,help:stock_salable.field_product_template_qty_salable
+msgid "Amount of products available - outgoing quantity"
+msgstr ""
+
+#. module: stock_salable
+#: model:ir.model.fields,field_description:stock_salable.field_stock_location_salable_stock
+msgid "Available on Salable Stock"
+msgstr ""
+
+#. module: stock_salable
+#: model:ir.model,name:stock_salable.model_stock_location
+msgid "Inventory Locations"
+msgstr ""
+
+#. module: stock_salable
+#: model:ir.model,name:stock_salable.model_product_product
+msgid "Pos Products"
+msgstr ""
+
+#. module: stock_salable
+#: model:ir.model,name:stock_salable.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: stock_salable
+#: model:ir.model,name:stock_salable.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: stock_salable
+#: model:ir.model,name:stock_salable.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: stock_salable
+#: model:ir.model.fields,field_description:stock_salable.field_product_product_qty_salable
+#: model:ir.model.fields,field_description:stock_salable.field_product_template_qty_salable
+#: model:ir.model.fields,field_description:stock_salable.field_sale_order_line_qty_salable
+msgid "Stock Salable"
+msgstr ""
+

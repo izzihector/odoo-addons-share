@@ -1,0 +1,139 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* update_masive_csv
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-20 02:07+0000\n"
+"PO-Revision-Date: 2019-03-20 02:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: update_masive_csv
+#: selection:update.masive.csv,state:0
+msgid "Applied"
+msgstr "Aplicado"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: update_masive_csv
+#: selection:update.masive.csv,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_field_from
+msgid "Field From"
+msgstr "Campo de busqueda"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_field_to
+msgid "Field To"
+msgstr "Campo actualizar"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_file_name
+msgid "File Name"
+msgstr "Nombre del archivo"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_csv
+msgid "File csv"
+msgstr "Archivo CSV"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_id
+msgid "ID"
+msgstr "ID"
+
+#. module: update_masive_csv
+#: code:addons/update_masive_csv/models/update_masive_csv.py:40
+#, python-format
+msgid "Invalid file format, file with .csv extension is required!"
+msgstr "Formato de archivo no válido, se requiere un archivo con extensión .csv"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_name
+msgid "Model"
+msgstr "Modelo"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_field_from_name
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_field_to_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: update_masive_csv
+#: model:ir.model.fields,field_description:update_masive_csv.field_update_masive_csv_state
+msgid "State"
+msgstr "Estado"
+
+#. module: update_masive_csv
+#: code:addons/update_masive_csv/models/update_masive_csv.py:64
+#, python-format
+msgid "The first field of the file does not match: {}"
+msgstr "El primer campo del archivo no coincide con el seleccionado: {}"
+
+#. module: update_masive_csv
+#: code:addons/update_masive_csv/models/update_masive_csv.py:68
+#, python-format
+msgid "The second field of the file does not match: {}"
+msgstr "El segundo campo del archivo no coincide con el seleccionado: {}"
+
+#. module: update_masive_csv
+#: code:addons/update_masive_csv/models/update_masive_csv.py:51
+#, python-format
+msgid "The types of fields do not match {} not {}"
+msgstr "Los tipos de datos de campos no coinciden {} - {}"
+
+#. module: update_masive_csv
+#: model:ir.ui.view,arch_db:update_masive_csv.view_update_masive_csv_form
+msgid "Update"
+msgstr "Actualizar"
+
+#. module: update_masive_csv
+#: model:ir.actions.act_window,name:update_masive_csv.action_update_masive_csv
+#: model:ir.ui.menu,name:update_masive_csv.submenu_update_masive_csv_action
+msgid "Update Masive CSV"
+msgstr "Actualización masiva por CSV"
+
+#. module: update_masive_csv
+#: model:ir.model,name:update_masive_csv.model_update_masive_csv
+#: model:ir.ui.menu,name:update_masive_csv.update_masive_csv_menu
+msgid "Update masive csv"
+msgstr "Actualización masiva por CSV"
+

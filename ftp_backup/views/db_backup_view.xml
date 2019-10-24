@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ftp_view_backup_backup_config_form" model="ir.ui.view">
+        <field name="name">ftp.view.backup.conf.form</field>
+        <field name="model">db.backup</field>
+        <field name="inherit_id" ref="auto_backup.view_backup_config_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='configuration']" position="after">
+                <group string="FTP">
+                    <field name="send_ftp"/>
+                    <field name="ftp_dest" placeholder="ejemplourl.com/directorio_respaldo/"
+                        attrs="{'invisible': [('send_ftp','=',False)], 'required': [('send_ftp','=',True)]}"/>
+                    <field name="ftp_user"
+                        attrs="{'invisible': [('send_ftp','=',False)], 'required': [('send_ftp','=',True)]}"/>
+                    <field name="ftp_pwd" password="True"
+                         attrs="{'invisible': [('send_ftp','=',False)], 'required': [('send_ftp','=',True)]}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

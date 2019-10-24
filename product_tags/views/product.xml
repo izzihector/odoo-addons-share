@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Template Form -->
+    <record id="product_template_inherit_form_view" model="ir.ui.view">
+        <field name="name">Product Template Tags Form View</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <div name="options" position="before">
+                <field name="tag_ids" placeholder="Tags" widget="many2many_tags"
+                    options="{'no_create_edit': True}"/>
+            </div>
+        </field>
+    </record>
+    <!-- Template Kanban -->
+    <record id="product_template_inherit_kanban_view" model="ir.ui.view">
+        <field name="name">Product Template Tags Kanban View</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_kanban_view" />
+        <field name="arch" type="xml">
+            <field name="currency_id" position="after">
+                <field name="tag_ids"/>
+            </field>
+            <xpath expr="//div[@class='o_kanban_image']" position="before">
+                <div class="o_kanban_tags_section">
+                    <span class="oe_kanban_list_many2many">
+                        <field name="tag_ids"/>
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <!-- Product Kanban -->
+    <record id="product_product_inherit_kanban_view" model="ir.ui.view">
+        <field name="name">Product Variant Tags Kanban View</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_kanban_view"/>
+        <field name="arch" type="xml">
+            <field name="image_small" position="after">
+                <field name="tag_ids"/>
+            </field>
+            <xpath expr="//div[@class='o_kanban_tags_section']" position="inside">
+                <span class="oe_kanban_list_many2many">
+                    <field name="tag_ids"/>
+                </span>
+            </xpath>
+        </field>
+    </record>
+    <!-- Tag Form -->
+    <record id="product_tag_form_view" model="ir.ui.view">
+        <field name="name">Product Tags Form View</field>
+        <field name="model">product.tag</field>
+        <field name="arch" type="xml">
+            <form string="Tags">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{'terminology': 'archive'}"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Tag Tree -->
+    <record id="product_tag_tree_view" model="ir.ui.view">
+        <field name="name">Product Tags Tree View</field>
+        <field name="model">product.tag</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <!-- Tag Search -->
+    <record id="product_tag_search_view" model="ir.ui.view">
+        <field name="name">Product Tags Search View</field>
+        <field name="model">product.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+    <!-- Tag Action -->
+    <act_window id="product_tag_action"
+        name="Tags"
+        res_model="product.tag"
+        view_mode="tree,form"
+        view_type="form"/>
+    <!-- Tag Menues -->
+    <menuitem id="product_tag_purchase_menu"
+        name="Tags"
+        sequence="15"
+        action="product_tag_action"
+        parent="purchase.menu_product_in_config_purchase"/>
+    <menuitem id="product_tag_sale_menu"
+        name="Tags"
+        sequence="15"
+        action="product_tag_action"
+        parent="sale.prod_config_main"/>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_download_template_cartola" model="ir.ui.view">
+            <field name="name">download.template.cartola.view</field>
+            <field name="model">download.template.cartola</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+						          <field name="ext" widget="radio"/>
+                	</group>
+                    <footer>
+                        <button name="download_template" string="Descargar" type="object" class="btn btn-primary"/>
+                        <button string="Cerrar" class="btn btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_download_template_cartola" model="ir.actions.act_window">
+          <field name="name">Descargar Plantilla de Cartola</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">download.template.cartola</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_bank_download_template"
+          name="Descargar Plantilla de Cartola"
+          parent="menu_bank_2"
+          sequence="99"
+          action="action_download_template_cartola" />
+
+    </data>
+</odoo>

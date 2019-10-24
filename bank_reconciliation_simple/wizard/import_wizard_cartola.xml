@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="view_import_wizard_cartola" model="ir.ui.view">
+            <field name="name">import.wizard.cartola.view</field>
+            <field name="model">import.wizard.cartola</field>
+            <field name="arch" type="xml">
+                <form>
+                	<group>
+                		<field widget="binary" height="64" name="file" filename="file_name" required="1"/>
+						        <field name="file_name" invisible="1"/>
+                    <field name="bank_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                	</group>
+                    <footer>
+                        <button name="import_csv" string="Importar Cartola" type="object" class="btn btn-primary"/>
+                        <button string="Cerrar" class="btn btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_wizard_cartola" model="ir.actions.act_window">
+          <field name="name">Importar Cartola</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">import.wizard.cartola</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">form</field>
+          <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

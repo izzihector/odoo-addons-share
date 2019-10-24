@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <data>
+    <record id="view_form_bank_reconciliation_father" model="ir.ui.view">
+         <field name="name">view.form.bank.reconciliation.father</field>
+         <field name="model">bank.reconciliation.father</field>
+         <field name="arch" type="xml">
+            <form string="Cartola Bancaria">
+              <header>
+
+                  <button name="%(action_wizard_cartola)d" type="action" class="btn btn-primary" string="Importar Cartola"/>
+
+
+                  <button name="exe_conciliar" string="Conciliar" class="oe_highlight" type="object"
+                        attrs="{'invisible': [('state','!=','draft')]}" />
+
+                  <button name="exe_romper_conciliacion" string="Romper Conciliación" class="oe_highlight" type="object"
+                        attrs="{'invisible': [('state','!=','conciliado')]}" />
+
+                  <button name="exe_draft" string="Borrador" class="oe_highlight" type="object"
+                        attrs="{'invisible': [('state','!=','cancel')]}" />
+
+                  <field name="state" widget="statusbar"/>
+
+              </header>
+              <sheet>
+                  <div class="oe_title">
+                           <h1>
+                               <field name="name" readonly="1"/>
+                           </h1>
+                        </div>
+                  <group>
+                      <group>
+                          <field name="description" required="1"/>
+                          <field name="entry_date"/>
+                          <field name="user_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                       </group>
+                      <group>
+                          <field name="date" required="1"/>
+                          <field name="bank_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                          <field name="saldo_inicial"/>
+                          <field name="saldo_final"/>
+                       </group>
+                  </group>
+
+
+                  <notebook colspan="4">
+                        <page string="Detalle de Conciliación">
+                                <group>
+                                    <field name="lines_ids" nolabel="1">
+                                        <tree editable="bottom" decoration-muted="state == 'cancel'" colors="red:state=='draft'" default_order='id'>
+                                            <field name="id" invisible="1"/>
+                                            <field name="bank_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                                            <field name="voucher" widget="integer"/>
+                                            <field name="date" required="1"/>
+                                            <field name="description"/>
+                                            <field name="partner_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                                            <field name="no_doc"/>
+                                            <field name="abono" sum="Suma"/>
+                                            <field name="cargo" sum="Suma"/>
+                                            <field name="account_move_line_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                                            <field name="invoice_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open':True}"/>
+                                            <field name="state"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                        </page>
+
+                        <page string="Notas">
+                            <field name="obs"/>
+                        </page>
+                </notebook>
+
+               </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_bank_reconciliation_father" model="ir.ui.view">
+         <field name="name">view.bank.reconciliation.father</field>
+         <field name="model">bank.reconciliation.father</field>
+         <field name="arch" type="xml">
+            <tree decoration-muted="state == 'cancel'" colors="red:state=='draft'">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="user_id"/>
+                <field name="saldo_inicial"/>
+                <field name="saldo_final"/>
+                <field name="date"/>
+                <field name="bank_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_bank_reconciliation_father" model="ir.actions.act_window">
+        <field name="name">Cartola Bancaria</field>
+        <field name="res_model">bank.reconciliation.father</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Presione para crear nuevo Registro</p>
+       </field>
+    </record>
+
+    <menuitem id="menu_bank_4"
+        name="Cartola Bancaria"
+        parent="menu_bank_2"
+        sequence="10"
+        action="action_bank_reconciliation_father" />
+     </data>
+
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+        <record id="PR01" model="documentary.process">
+              <field name="desc">Documentación</field>
+        </record>
+        <record id="PR02" model="documentary.process">
+              <field name="desc">Producto</field>
+        </record>
+        <record id="PR03" model="documentary.process">
+              <field name="desc">Servidor</field>
+        </record>
+        <record id="PR04" model="documentary.process">
+              <field name="desc">Contrato</field>
+        </record>
+  </data>
+</odoo>
