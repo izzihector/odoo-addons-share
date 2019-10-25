@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* products_partners_access
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-04 18:09+0000\n"
+"PO-Revision-Date: 2018-07-04 14:11-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_CL\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: products_partners_access
+#: model:ir.ui.view,arch_db:products_partners_access.res_user_inherit_form
+msgid ""
+"<i class=\"fa fa-info-circle\"/>\n"
+"              Checking this fields will enable creation and edition for the selected\n"
+"              model in purchase orders, sale orders, invoices and stock picking views."
+msgstr "<i class=\"fa fa-info-circle\"/> Seleccionando estas opciones permitirá que se puedan crear o editar los modelos en las vistas Orden de Compra, Orden de Venta, Facturación y Guías de Despacho/Albaranes."
+
+#. module: products_partners_access
+#: model:ir.model.fields,field_description:products_partners_access.field_res_users_account_access
+msgid "Account access"
+msgstr "Crear/Editar Cuentas Contables/Analíticas"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: products_partners_access
+#: model:ir.model.fields,field_description:products_partners_access.field_res_users_partner_access
+msgid "Partner access"
+msgstr "Crear/Editar Clientes y Proveedores"
+
+#. module: products_partners_access
+#: model:ir.model.fields,field_description:products_partners_access.field_res_users_product_access
+msgid "Product access"
+msgstr "Crear/Editar Productos"
+
+#. module: products_partners_access
+#: model:ir.ui.view,arch_db:products_partners_access.res_user_inherit_form
+msgid "Products & Partners Access"
+msgstr "Acceso a Productos, Clientes, Proveedores, Cuentas Contables y Analíticas"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_purchase_order
+msgid "Purchase Order"
+msgstr "Órden de Compra"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_stock_move
+msgid "Stock Move"
+msgstr "Moviemiento de stock"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_product_template
+#: model:ir.model,name:products_partners_access.model_res_partner
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: products_partners_access
+#: model:ir.model.fields,field_description:products_partners_access.field_res_users_user_access
+msgid "User access"
+msgstr "Crear/Editar Vendedor"
+
+#. module: products_partners_access
+#: model:ir.model,name:products_partners_access.model_res_users
+msgid "Users"
+msgstr "Usuarios"

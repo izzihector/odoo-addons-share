@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="res_user_inherit_form" model="ir.ui.view">
+    <field name="name">User form acccess inherit</field>
+    <field name="model">res.users</field>
+    <field name="inherit_id" ref="base.view_users_form"/>
+    <field name="arch" type="xml">
+
+      <xpath expr="//page[@name='access_rights']" position="inside">
+        <group name="products_partners_access">
+          <group string="Products &amp; Partners Access">
+            <p colspan="2"> <i class="fa fa-info-circle" />
+              Checking this fields will enable creation and edition for the selected
+              model in purchase orders, sale orders, invoices and stock picking views.
+            </p>
+            <field name="partner_access" />
+            <field name="product_access" />
+            <field name="account_access" />
+            <field name="user_access" />
+          </group>
+        </group>
+      </xpath>
+
+    </field>
+  </record>
+
+</odoo>
